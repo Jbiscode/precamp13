@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <title>연습</title>
+    <title>회원가입</title>
     <link rel="stylesheet" href="./final.css">
     <script src="./final.js"></script>
 </head>
 <body>
     <div class="background">
         <div class="register_rec">
-            <div class="register_title">코드캠프 회원가입</div>
+            <div class="register_title">회원가입</div>
             <input id="email" type="text" class="register_input" placeholder="이메일을 입력해 주세요." oninput="checkValidation()">
             <div id="email_error" class="error_msg"></div>
             <input id="name" type="text" class="register_input" placeholder="이름을 입력해 주세요." oninput="checkValidation()">
@@ -25,7 +25,7 @@
             <div class="register_auth">
                 <div class="auth1">
                     <div id="auth">000000</div>
-                    <button id="auth_button" onclick="pressedBtn()" style="display: block;" disabled>인증번호 전송</button>
+                    <button id="auth_button" onclick="inputCheck(),pressedBtn()" style="display: block;" disabled>인증번호 전송</button>
                 </div>
                 <div class="auth2">
                     <div id="timer" style="display: inline;">0:00</div>

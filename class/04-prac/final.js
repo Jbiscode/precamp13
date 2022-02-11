@@ -3,27 +3,50 @@ function testBtn(){
     const testBtn = document.getElementById("register_button");
     testBtn.disabled=false 
 }
-function inputCheck(){ //각각 형식이 맞는지 확인하는 함수
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+let inputOk = false; 
+
+function inputCheck(){                                                   //각각 형식이 맞는지 확인하는 함수
     let email = document.getElementById("email").value
     let name = document.getElementById("name").value
+    let pw1 = document.getElementById("pw1").value
+    let pw2 = document.getElementById("pw2").value
 
-    if(email.includes("@")===false){
+
+    if(email.includes("@")!==false){
+        document.getElementById("email_error").innerText=""
+        inputOk = true ;
+    }else{
         document.getElementById("email_error").innerText="메일을 다시 입력하세요."
+        inputOk = false ;
     }
     
     
-    if (name===""){
+    if (name!==""){
+        document.getElementById("name_error").innerText=""
+        inputOk = true ;
+    }else{
         document.getElementById("name_error").innerText="이름을 입력하세요."
+        inputOk = false ;
+    }
+
+    if (pw1===pw2){
+        document.getElementById("pw2_error").innerText=""
+        inputOk = true ;
+    }else{
+        document.getElementById("pw2_error").innerText="비밀번호가 다릅니다"
+        inputOk = false ;
     }
     }
     
-    // //////////////////////////////////////////////////////////////////////////////////////////////////
+///////////// //////////////////////////////////////////////////////////////////////////////////////////////////
 
 let isStarted = false;    //변수를 바깥에 설정해놔야 확실히 적용이된다.  버튼 타이머
 
 const pressedBtn=()=>{
     
-    if (isStarted===false){
+    if (isStarted===false && inputOk===true){
 
         isStarted=true;
 
@@ -31,7 +54,7 @@ const pressedBtn=()=>{
         document.getElementById("auth").innerText =token
         // document.getElementById("auth").style.color ="#"+ token
 
-        let time = 3
+        let time = 180
 
         const cfBtn = document.getElementById("cf");
         cfBtn.disabled = false;
@@ -54,12 +77,16 @@ const pressedBtn=()=>{
             }else{
                 const cfBtn = document.getElementById("cf");
                 cfBtn.disabled = true;
+                document.getElementById("auth").innerText = "000000"
+                document.getElementById("timer").innerText = "0:00"
 
                 clearInterval(getTime)
                 isStarted=false;
             }
         },1000)
 
+    }else if(inputOk===false){
+        alert("입력한 정보를 확인하세요")
     }else{
         alert("인증번호가 아직 유효합니다.")
     }
@@ -83,7 +110,6 @@ function changeFocus2(){
         document.getElementById("phone3").focus()
     }
 }
-
 
 ////////////////////////////////////////////////////////////////////////
 function checkValidation(){                                                                         //입력값에 빈칸이 없을때 회원가입 버튼 활성화시키는 함수
@@ -112,5 +138,10 @@ function checkValidation(){                                                     
 
 function cfButton(){           //인증확인버튼 눌렀을때 인증완료뜨기
     alert("인증이 완료되었습니다.")
-    document.getElementById("cf")
+    document.getElementById("register_button").disabled=false;
+    document.getElementById("auth").innerText = "000000"
+    document.getElementById("timer").innerText = "0:00"
+    document.getElementById("cf").disabled=true;
+    time=0
+    clearInterval(getTime)
 }
