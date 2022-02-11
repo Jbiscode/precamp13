@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>이벤트 변경 감지 실습</title>
+    <script src="/class/03-javascript/07-signup.js"></script>
+</head>
+<body>
+    <input id="email" type="text" placeholder="이메일" oninput="checkValidation()"><br><br>
+    <input id="pw1" type="text" placeholder="비밀번호" oninput="checkValidation()"><br><br>
+    <input id="pw2" type="text" placeholder="비밀번호 확인" oninput="checkValidation()"><br><br>
+    <button id="submit" disabled >회원가입</button>
+</body>
+</html>
+
+<!-- oninput 으로 입력됐을때 함수실행시키기 -->
