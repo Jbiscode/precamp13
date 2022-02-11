@@ -3,60 +3,66 @@ function testBtn(){
     const testBtn = document.getElementById("register_button");
     testBtn.disabled=false 
 }
-
-// //////////////////////////////////////////////////////////////////////////////////////////////////
-
-let isStarted = false;    //변수를 바깥에 설정해놔야 확실히 적용이된다.
-
-const pressedBtn=()=>{
+function inputCheck(){ //각각 형식이 맞는지 확인하는 함수
     let email = document.getElementById("email").value
     let name = document.getElementById("name").value
 
     if(email.includes("@")===false){
         document.getElementById("email_error").innerText="메일을 다시 입력하세요."
-    }else if (name!==""){
+    }
+    
+    
+    if (name===""){
         document.getElementById("name_error").innerText="이름을 입력하세요."
     }
-        if (isStarted===false){
+    }
+    
+    // //////////////////////////////////////////////////////////////////////////////////////////////////
 
-            isStarted=true;
+let isStarted = false;    //변수를 바깥에 설정해놔야 확실히 적용이된다.  버튼 타이머
 
-            const token = String(Math.floor(Math.random()*1000000)).padStart(6,"0")
-            document.getElementById("auth").innerText =token
-            // document.getElementById("auth").style.color ="#"+ token
+const pressedBtn=()=>{
+    
+    if (isStarted===false){
 
-            let time = 3
+        isStarted=true;
 
-            const cfBtn = document.getElementById("cf");
-            cfBtn.disabled = false;
+        const token = String(Math.floor(Math.random()*1000000)).padStart(6,"0")
+        document.getElementById("auth").innerText =token
+        // document.getElementById("auth").style.color ="#"+ token
+
+        let time = 3
+
+        const cfBtn = document.getElementById("cf");
+        cfBtn.disabled = false;
 
 
-            // let getTime = null                  위에안쓰고
-            //getTime =  이렇게안하고           (const , let)  getTime = 지정해도 됌
+        // let getTime = null                  위에안쓰고
+        //getTime =  이렇게안하고           (const , let)  getTime = 지정해도 됌
 
-            let getTime = null
-            getTime = setInterval(function(){
-                
-                if (time>=0){
-                    const min = String(Math.floor(time/60)).padStart(1,"0")
-                    const sec = String(time%60).padStart(2,"0")
-                    document.getElementById("timer").innerText = min+":"+sec
-                    time = time-1
-                    const cfBtn = document.getElementById("cf");
-                    cfBtn.disabled = false;
-                    console.log(time)
-                }else{
-                    const cfBtn = document.getElementById("cf");
-                    cfBtn.disabled = true;
+        let getTime = null
+        getTime = setInterval(function(){
+            
+            if (time>=0){
+                const min = String(Math.floor(time/60)).padStart(1,"0")
+                const sec = String(time%60).padStart(2,"0")
+                document.getElementById("timer").innerText = min+":"+sec
+                time = time-1
+                const cfBtn = document.getElementById("cf");
+                cfBtn.disabled = false;
+                console.log(time)
+            }else{
+                const cfBtn = document.getElementById("cf");
+                cfBtn.disabled = true;
 
-                    clearInterval(getTime)
-                    isStarted=false;
-                }
-            },1000)
+                clearInterval(getTime)
+                isStarted=false;
+            }
+        },1000)
 
-        }else{
-            alert("인증번호가 아직 유효합니다.")
-        }
+    }else{
+        alert("인증번호가 아직 유효합니다.")
+    }
 }
 
 // ////////////////////////////////////////////////////////////////////////////////
@@ -107,5 +113,4 @@ function checkValidation(){                                                     
 function cfButton(){           //인증확인버튼 눌렀을때 인증완료뜨기
     alert("인증이 완료되었습니다.")
     document.getElementById("cf")
-
 }
