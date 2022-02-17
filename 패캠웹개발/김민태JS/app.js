@@ -4,8 +4,8 @@ const content = document.createElement('div');
 const NEWS_URL = 'https://api.hnpwa.com/v0/news/1.json';
 const CONTENT_URL = 'https://api.hnpwa.com/v0/item/@id.json';
 
-ajax.open('GET',NEWS_URL ,false);
-ajax.send();
+// ajax.open('GET',NEWS_URL ,false);        function으로 대체함
+// ajax.send();
 
 // console.log(ajax.response);
 
@@ -24,18 +24,24 @@ ajax.send();
 // </ul>`
 
 // 반복문으로 overwrite 안되고 모두 뜨게하기
+function getData(url){
+    ajax.open('get',url,false);
+    ajax.send();
 
-const newsFeed = JSON.parse(ajax.response);
+    return JSON.parse(ajax.response);
+}
+
+const newsFeed = getData(NEWS_URL);
 const ul = document.createElement('ul');            //ul 태그 생성하기
 
 window.addEventListener('hashchange', function(){
     const id = location.hash.substr(1);    //substr() 인덱스~번째부터 표시한다는것
     // 1을쓰는이유는 0인덱스에는 #이있고 아이디값은 #을 빼고 아이디값을 추출해야 하기때문에
     
-    ajax.open('get',CONTENT_URL.replace('@id',id),false);
-    ajax.send();
+    // ajax.open('get',CONTENT_URL.replace('@id',id),false);     function으로 대체함
+    // ajax.send();
 
-    const newsContent = JSON.parse(ajax.response);
+    const newsContent = getData(CONTENT_URL.replace('@id',id));
     const title = document.createElement('h1');
 
     title.innerHTML = newsContent.title;
@@ -56,7 +62,7 @@ for(let i = 0; i < 10; i++){                         //반복문
         </a>
     </li>
     `;
-    
+
     // a.href = `#`;                  //a태그에 href속성추가   #을 쓰는이유는 id링크를 쓰기위해
     // a.innerHTML = ``;      //innerHTML은 <tag> 이사이에 쓰는것 </tag>
     // 안에 데이터를 불러오려면 `${ }`  형식으로 불러와야한다.
