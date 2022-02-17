@@ -120,6 +120,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 })({"app.js":[function(require,module,exports) {
 var ajax = new XMLHttpRequest(); //new XMLH를 변수 ajax에 저장
 
+var content = document.createElement('div');
 var NEWS_URL = 'https://api.hnpwa.com/v0/news/1.json';
 var CONTENT_URL = 'https://api.hnpwa.com/v0/item/@id.json';
 ajax.open('GET', NEWS_URL, false);
@@ -142,10 +143,14 @@ var ul = document.createElement('ul'); //ul 태그 생성하기
 
 window.addEventListener('hashchange', function () {
   var id = location.hash.substr(1); //substr() 인덱스~번째부터 표시한다는것
+  // 1을쓰는이유는 0인덱스에는 #이있고 아이디값은 #을 빼고 아이디값을 추출해야 하기때문에
 
   ajax.open('get', CONTENT_URL.replace('@id', id), false);
   ajax.send();
   var newsContent = JSON.parse(ajax.response);
+  var title = document.createElement('h1');
+  title.innerHTML = newsContent.title;
+  content.appendChild(title);
   console.log(newsContent);
 });
 
@@ -155,7 +160,7 @@ for (var i = 0; i < 10; i++) {
 
   var a = document.createElement('a'); //a태그생성
 
-  a.href = "#".concat(newsFeed[i].id); //a태그에 href속성추가
+  a.href = "#".concat(newsFeed[i].id); //a태그에 href속성추가   #을 쓰는이유는 id링크를 쓰기위해
 
   a.innerHTML = "".concat(newsFeed[i].title, " (").concat(newsFeed[i].comments_count, ")"); //innerHTML은 <tag> 이사이에 쓰는것 </tag>
   // 안에 데이터를 불러오려면 `${ }`  형식으로 불러와야한다.
@@ -166,6 +171,7 @@ for (var i = 0; i < 10; i++) {
 }
 
 document.getElementById('root').appendChild(ul);
+document.getElementById('root').appendChild(content);
 },{}],"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -194,7 +200,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38585" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43613" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
