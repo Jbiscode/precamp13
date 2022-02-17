@@ -1,3 +1,4 @@
+const container = document.getElementById('root');     //동일한 코드가 반복되는건 오타를 방지하기위해 지정하는게좋음
 const ajax = new XMLHttpRequest();     //new XMLH를 변수 ajax에 저장
 const content = document.createElement('div');
 const NEWS_URL = 'https://api.hnpwa.com/v0/news/1.json';
@@ -55,5 +56,5 @@ for(let i = 0; i < 10; i++){                         //반복문
     li.appendChild(a);
     ul.appendChild(li);                               // ul 자식에 li추가
 }
-document.getElementById('root').appendChild(ul); 
-document.getElementById('root').appendChild(content); 
+container.appendChild(ul);           //똑같은 코드는 오타위험이있어서 이렇게 등록해놓고 사용
+container.appendChild(content); 
