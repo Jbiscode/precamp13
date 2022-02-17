@@ -44,16 +44,16 @@ window.addEventListener('hashchange', function(){
     const newsContent = getData(CONTENT_URL.replace('@id',id));
     const title = document.createElement('h1');
 
-    title.innerHTML = newsContent.title;
-    content.appendChild(title);
-    console.log(newsContent);
+    container.innerHTML = '';
+    // title.innerHTML = newsContent.title;
+    // content.appendChild(title);
 
 });
 
 for(let i = 0; i < 10; i++){                         //반복문
     const div = document.createElement('div');
-    const li = document.createElement('li');           //li태그 생성
-    const a = document.createElement('a');             //a태그생성
+    // const li = document.createElement('li');           //li태그 생성
+    // const a = document.createElement('a');             //a태그생성
 
     div.innerHTML= `
     <li>
