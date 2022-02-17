@@ -45,16 +45,25 @@ window.addEventListener('hashchange', function(){
 });
 
 for(let i = 0; i < 10; i++){                         //반복문
+    const div = document.createElement('div');
     const li = document.createElement('li');           //li태그 생성
     const a = document.createElement('a');             //a태그생성
 
-    a.href = `#${newsFeed[i].id}`;                  //a태그에 href속성추가   #을 쓰는이유는 id링크를 쓰기위해
-    a.innerHTML = `${newsFeed[i].title} (${newsFeed[i].comments_count})`;      //innerHTML은 <tag> 이사이에 쓰는것 </tag>
+    div.innerHTML= `
+    <li>
+        <a href="#${newsFeed[i].id}">
+        ${newsFeed[i].title} (${newsFeed[i].comments_count})
+        </a>
+    </li>
+    `;
+    
+    // a.href = `#`;                  //a태그에 href속성추가   #을 쓰는이유는 id링크를 쓰기위해
+    // a.innerHTML = ``;      //innerHTML은 <tag> 이사이에 쓰는것 </tag>
     // 안에 데이터를 불러오려면 `${ }`  형식으로 불러와야한다.
     // `` 는 숫자키보드 옆에있는거 
 
-    li.appendChild(a);
-    ul.appendChild(li);                               // ul 자식에 li추가
+    ul.appendChild(div.firstElementChild);
+    //또는 ul.appendChild(div.children[0]);
 }
 container.appendChild(ul);           //똑같은 코드는 오타위험이있어서 이렇게 등록해놓고 사용
 container.appendChild(content); 
