@@ -31,31 +31,8 @@ function getData(url){
     return JSON.parse(ajax.response);
 }
 
+function newsFeed(){
 const newsFeed = getData(NEWS_URL);
-const ul = document.createElement('ul');            //ul 태그 생성하기
-
-window.addEventListener('hashchange', function(){
-    const id = location.hash.substr(1);    //substr() 인덱스~번째부터 표시한다는것
-    // 1을쓰는이유는 0인덱스에는 #이있고 아이디값은 #을 빼고 아이디값을 추출해야 하기때문에
-    
-    // ajax.open('get',CONTENT_URL.replace('@id',id),false);     function으로 대체함
-    // ajax.send();
-
-    const newsContent = getData(CONTENT_URL.replace('@id',id));
-    // const title = document.createElement('h1');
-
-    container.innerHTML = `
-    <h1>${newsContent.title}</h1>
-
-    <div>
-        <a href='#'>목록으로</a>
-    </div>
-    `;     // a태그 클릭했을때 비우기
-    // title.innerHTML = newsContent.title;     
-    // content.appendChild(title);
-
-});
-
 const newsList = [];              //빈배열을 만들어주는것
 
 newsList.push('<ul>');             //반복문전에 ul태그 안에 삽입하기위해 오픈태그 넣기
@@ -91,3 +68,40 @@ container.innerHTML = newsList.join("");
 //현재 newsList는 배열인데 innerHTML에는 문자열뿐 못오기때문에
 //문자열로 바꿔야하는데 join을 사용해서 배열을 문자열로 합친다.
 //join은 합칠떄 기본값으로 ,를 사용하는데 지금은 필요없으니까 공백으로 따로 설정해야함
+// const ul = document.createElement('ul');            //ul 태그 생성하기
+}
+
+function newsContent(){
+    const id = location.hash.substr(1);    //substr() 인덱스~번째부터 표시한다는것
+    // 1을쓰는이유는 0인덱스에는 #이있고 아이디값은 #을 빼고 아이디값을 추출해야 하기때문에
+    
+    // ajax.open('get',CONTENT_URL.replace('@id',id),false);     function으로 대체함
+    // ajax.send();
+
+    const newsContent = getData(CONTENT_URL.replace('@id',id));
+    // const title = document.createElement('h1');
+
+    container.innerHTML = `
+    <h1>${newsContent.title}</h1>
+
+    <div>
+        <a href='#'>목록으로</a>
+    </div>
+    `;     // a태그 클릭했을때 비우기
+    // title.innerHTML = newsContent.title;     
+    // content.appendChild(title);
+}
+
+function router(){
+    const routePath = location.hash
+
+    if(routePath===''){
+        newsFeed();
+    }else{
+        newsContent();
+    }
+}
+
+window.addEventListener('hashchange',router);
+
+router();

@@ -146,10 +146,36 @@ function getData(url) {
   return JSON.parse(ajax.response);
 }
 
-var newsFeed = getData(NEWS_URL);
-var ul = document.createElement('ul'); //ul 태그 생성하기
+function newsFeed() {
+  var newsFeed = getData(NEWS_URL);
+  var newsList = []; //빈배열을 만들어주는것
 
-window.addEventListener('hashchange', function () {
+  newsList.push('<ul>'); //반복문전에 ul태그 안에 삽입하기위해 오픈태그 넣기
+
+  for (var i = 0; i < 10; i++) {
+    //반복문
+    // const div = document.createElement('div');
+    // const li = document.createElement('li');           //li태그 생성
+    // const a = document.createElement('a');             //a태그생성
+    newsList.push("\n    <li>\n        <a href=\"#".concat(newsFeed[i].id, "\">\n        ").concat(newsFeed[i].title, " (").concat(newsFeed[i].comments_count, ")\n        </a>\n    </li>\n    ")); // a.href = `#`;                  //a태그에 href속성추가   #을 쓰는이유는 id링크를 쓰기위해
+    // a.innerHTML = ``;      //innerHTML은 <tag> 이사이에 쓰는것 </tag>
+    // 안에 데이터를 불러오려면 `${ }`  형식으로 불러와야한다.
+    // `` 는 숫자키보드 옆에있는거 
+    // ul.appendChild(div.firstElementChild);   //ul태그에 div 첫번째 자식태그를 포함시키는것
+    //또는 ul.appendChild(div.children[0]);
+  }
+
+  newsList.push('</ul>'); //반복문이 끝났으니 ul태그를 닫아준다(한번만쓰기떄문에 밖에둔것)
+  // container.appendChild(ul);           //똑같은 코드는 오타위험이있어서 이렇게 등록해놓고 사용
+  // container.appendChild(content);
+
+  container.innerHTML = newsList.join(""); //현재 newsList는 배열인데 innerHTML에는 문자열뿐 못오기때문에
+  //문자열로 바꿔야하는데 join을 사용해서 배열을 문자열로 합친다.
+  //join은 합칠떄 기본값으로 ,를 사용하는데 지금은 필요없으니까 공백으로 따로 설정해야함
+  // const ul = document.createElement('ul');            //ul 태그 생성하기
+}
+
+function newsContent() {
   var id = location.hash.substr(1); //substr() 인덱스~번째부터 표시한다는것
   // 1을쓰는이유는 0인덱스에는 #이있고 아이디값은 #을 빼고 아이디값을 추출해야 하기때문에
   // ajax.open('get',CONTENT_URL.replace('@id',id),false);     function으로 대체함
@@ -160,31 +186,20 @@ window.addEventListener('hashchange', function () {
   container.innerHTML = "\n    <h1>".concat(newsContent.title, "</h1>\n\n    <div>\n        <a href='#'>\uBAA9\uB85D\uC73C\uB85C</a>\n    </div>\n    "); // a태그 클릭했을때 비우기
   // title.innerHTML = newsContent.title;     
   // content.appendChild(title);
-});
-var newsList = []; //빈배열을 만들어주는것
-
-newsList.push('<ul>'); //반복문전에 ul태그 안에 삽입하기위해 오픈태그 넣기
-
-for (var i = 0; i < 10; i++) {
-  //반복문
-  // const div = document.createElement('div');
-  // const li = document.createElement('li');           //li태그 생성
-  // const a = document.createElement('a');             //a태그생성
-  newsList.push("\n    <li>\n        <a href=\"#".concat(newsFeed[i].id, "\">\n        ").concat(newsFeed[i].title, " (").concat(newsFeed[i].comments_count, ")\n        </a>\n    </li>\n    ")); // a.href = `#`;                  //a태그에 href속성추가   #을 쓰는이유는 id링크를 쓰기위해
-  // a.innerHTML = ``;      //innerHTML은 <tag> 이사이에 쓰는것 </tag>
-  // 안에 데이터를 불러오려면 `${ }`  형식으로 불러와야한다.
-  // `` 는 숫자키보드 옆에있는거 
-  // ul.appendChild(div.firstElementChild);   //ul태그에 div 첫번째 자식태그를 포함시키는것
-  //또는 ul.appendChild(div.children[0]);
 }
 
-newsList.push('</ul>'); //반복문이 끝났으니 ul태그를 닫아준다(한번만쓰기떄문에 밖에둔것)
-// container.appendChild(ul);           //똑같은 코드는 오타위험이있어서 이렇게 등록해놓고 사용
-// container.appendChild(content);
+function router() {
+  var routePath = location.hash;
 
-container.innerHTML = newsList.join(""); //현재 newsList는 배열인데 innerHTML에는 문자열뿐 못오기때문에
-//문자열로 바꿔야하는데 join을 사용해서 배열을 문자열로 합친다.
-//join은 합칠떄 기본값으로 ,를 사용하는데 지금은 필요없으니까 공백으로 따로 설정해야함
+  if (routePath === '') {
+    newsFeed();
+  } else {
+    newsContent();
+  }
+}
+
+window.addEventListener('hashchange', router);
+router();
 },{}],"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -213,7 +228,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36885" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "41325" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
