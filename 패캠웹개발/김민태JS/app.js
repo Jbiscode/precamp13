@@ -42,34 +42,52 @@ window.addEventListener('hashchange', function(){
     // ajax.send();
 
     const newsContent = getData(CONTENT_URL.replace('@id',id));
-    const title = document.createElement('h1');
+    // const title = document.createElement('h1');
 
-    container.innerHTML = '';
-    // title.innerHTML = newsContent.title;
+    container.innerHTML = `
+    <h1>${newsContent.title}</h1>
+
+    <div>
+        <a href='#'>목록으로</a>
+    </div>
+    `;     // a태그 클릭했을때 비우기
+    // title.innerHTML = newsContent.title;     
     // content.appendChild(title);
 
 });
 
+const newsList = [];              //빈배열을 만들어주는것
+
+newsList.push('<ul>');             //반복문전에 ul태그 안에 삽입하기위해 오픈태그 넣기
+
 for(let i = 0; i < 10; i++){                         //반복문
-    const div = document.createElement('div');
+    // const div = document.createElement('div');
     // const li = document.createElement('li');           //li태그 생성
     // const a = document.createElement('a');             //a태그생성
 
-    div.innerHTML= `
+    newsList.push(`
     <li>
         <a href="#${newsFeed[i].id}">
         ${newsFeed[i].title} (${newsFeed[i].comments_count})
         </a>
     </li>
-    `;
+    `);
 
     // a.href = `#`;                  //a태그에 href속성추가   #을 쓰는이유는 id링크를 쓰기위해
     // a.innerHTML = ``;      //innerHTML은 <tag> 이사이에 쓰는것 </tag>
     // 안에 데이터를 불러오려면 `${ }`  형식으로 불러와야한다.
     // `` 는 숫자키보드 옆에있는거 
 
-    ul.appendChild(div.firstElementChild);
+    // ul.appendChild(div.firstElementChild);   //ul태그에 div 첫번째 자식태그를 포함시키는것
     //또는 ul.appendChild(div.children[0]);
 }
-container.appendChild(ul);           //똑같은 코드는 오타위험이있어서 이렇게 등록해놓고 사용
-container.appendChild(content); 
+
+newsList.push('</ul>');             //반복문이 끝났으니 ul태그를 닫아준다(한번만쓰기떄문에 밖에둔것)
+
+// container.appendChild(ul);           //똑같은 코드는 오타위험이있어서 이렇게 등록해놓고 사용
+// container.appendChild(content);
+
+container.innerHTML = newsList.join("");
+//현재 newsList는 배열인데 innerHTML에는 문자열뿐 못오기때문에
+//문자열로 바꿔야하는데 join을 사용해서 배열을 문자열로 합친다.
+//join은 합칠떄 기본값으로 ,를 사용하는데 지금은 필요없으니까 공백으로 따로 설정해야함
