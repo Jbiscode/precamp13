@@ -3,7 +3,9 @@ const ajax = new XMLHttpRequest();     //new XMLH를 변수 ajax에 저장
 const content = document.createElement('div');
 const NEWS_URL = 'https://api.hnpwa.com/v0/news/1.json';
 const CONTENT_URL = 'https://api.hnpwa.com/v0/item/@id.json';
-
+const store = {
+    currentPage:1,
+};
 // ajax.open('GET',NEWS_URL ,false);        function으로 대체함
 // ajax.send();
 
@@ -37,14 +39,15 @@ const newsList = [];              //빈배열을 만들어주는것
 
 newsList.push('<ul>');             //반복문전에 ul태그 안에 삽입하기위해 오픈태그 넣기
 
-for(let i = 0; i < 10; i++){                         //반복문
+for(let i = 0; i < 10; i++){                         
+    //반복문
     // const div = document.createElement('div');
     // const li = document.createElement('li');           //li태그 생성
     // const a = document.createElement('a');             //a태그생성
 
     newsList.push(`
     <li>
-        <a href="#${newsFeed[i].id}">
+        <a href="#/show/${newsFeed[i].id}">
         ${newsFeed[i].title} (${newsFeed[i].comments_count})
         </a>
     </li>
@@ -60,7 +63,12 @@ for(let i = 0; i < 10; i++){                         //반복문
 }
 
 newsList.push('</ul>');             //반복문이 끝났으니 ul태그를 닫아준다(한번만쓰기떄문에 밖에둔것)
-
+newsList.push(`
+    <div>
+        <a href='#/page/${store.currentPage -1}'>이전 페이지</a>
+        <a href='#/page/${store.currentPage +1}'>다음 페이지</a>
+    </div>
+`);
 // container.appendChild(ul);           //똑같은 코드는 오타위험이있어서 이렇게 등록해놓고 사용
 // container.appendChild(content);
 

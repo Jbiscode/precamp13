@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>네이버 : 회원가입</title>
+    <link type="image/x-icon" rel="shortcut icon" href="https://mblogthumb-phinf.pstatic.net/MjAxNzA1MjVfODEg/MDAxNDk1NzEwNjY2MjM1.F1vQ76vAO1zZ2Jy3KSUGrKSh_AVyucCDVSuIivfDzx8g.6d7pNmgwXgT1bsb_lnLXGATePjGlyd1iXXulHKbMzOYg.PNG.krazymouse/%EB%84%A4%EC%9D%B4%EB%B2%84.png?type=w800">
+    
+    <style>
+
+        *{
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+    
+        body{
+            width: auto;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background-color: #f5f6f7;;
+        }
+        .wrap{
+            width: 768px;
+            height: 991px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .mainlogo{
+            height: 158px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .agreebox1{
+            max-width: 460px;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        .agreebox2, .agreebox3,.agreebox4{
+            display: flex;
+            flex-direction: column;
+            padding-top: 35px;
+            font-size: 14px;
+        }
+        a{
+            text-decoration: none;
+        }
+        #kidsinfo{
+            font-weight: 400;
+            font-size: 12px;
+            background-color: #ffffff;
+            border: 1px solid #08a600;
+            color:#08a600;
+            padding: 6px 8px;
+            margin-left: 120px;
+        }
+        .agree2,.agree3,.agree4{
+            margin-bottom: 12px;
+        }
+        #agreeText2, #agreeText3,#agreeText4{
+            margin-top: 4px;
+            padding-top: 12px;
+            font-size: 12px;
+        }
+        .agreebox5{
+            font-size: 14px;
+            padding-top: 30px;
+            margin-right: 245px;
+        }
+        #protxt{
+            max-width: 460px;
+            font-size: 12px;
+            padding-top: 10px;
+            margin-bottom: 30px;
+        }
+    </style>
+
+</head>
+<body>
+    <form action="naver2.html" id="joinForm">
+        <!--전체 포함 div -->
+        <div class="wrap">
+            <!-- 언어선택 -->
+            <div>
+                <select style="margin-left: 650px;" name="" id="">
+                    <option value="1">한국어</option>
+                    <option value="2">English</option>
+                    <option value="3">中文(简体)</option>
+                    <option value="4">中文(台灣)</option>
+                </select>
+            </div>
+
+            <!-- 네이버 로고 -->
+            <div class="mainlogo">
+                <a href="https://www.naver.com"><img src="https://ssl.pstatic.net/static/nid/join/m_logo_naver.png" alt="네이버 로고"></a>
+            </div>
+            <!-- 첫번째 선택 -->
+            <div class="agreebox1">
+                <input type="checkbox" id="agree1"> 네이버 이용약관, 개인정보 수집 및 이용, 위치정보 이용약관(선택), 프로모션 정보 수신(선택)에 모두 동의합니다.
+            </div>
+
+            <!-- 두번째 선택 -->
+            <div style="font-weight: bold;" class="agreebox2">
+
+                <div class="agree2">
+                    <input type="checkbox" id="agree2"> 네이버 이용약관 동의 <span style="color: green;">(필수)</span>
+                </div>
+
+                <textarea name="" id="agreeText2" cols="73" rows="5">여러분을 환영합니다.
+
+네이버 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. 본 약관은 다양한 네이버 서비스의 이용과 관련하여 네이버 서비스를 제공하는 네이버 주식회사(이하 ‘네이버’)와 이를 이용하는 네이버 서비스 회원(이하 ‘회원’) 또는 비회원과의 관계를 설명하며, 아울러 여러분의 네이버 서비스 이용에 도움이 될 수 있는 유익한 정보를 포함하고 있습니다.</textarea>
+            </div>
+
+            <!-- 세번째 선택 -->
+            <div style="font-weight: bold;" class="agreebox3">
+                <div class="agree3">
+                    <input type="checkbox" id="agree3"> 개인정보 수집 및 이용 동의 <span style="color: green;">(필수)</span>
+                    <a href="https://nid.naver.com/user2/V2Join?m=kidGuide" target="_blank"><span id="kidsinfo">어린이용 안내</span></a>
+                </div>
+
+                <textarea name="" id="agreeText3" cols="73" rows="5">개인정보보호법에 따라 네이버에 회원가입 신청하시는 분께 수집하는 개인정보의 항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간, 동의 거부권 및 동의 거부 시 불이익에 관한 사항을 안내 드리오니 자세히 읽은 후 동의하여 주시기 바랍니다.
+
+                </textarea>
+            </div>
+
+            <!-- 네번째 선택 -->
+            <div style="font-weight: bold;" class="agreebox4">
+                <div class="agree4">
+                    <input type="checkbox" id="agree4"> 개인정보 수집 및 이용 동의 <span style="color: gray;">(선택)</span>
+                </div>
+
+                <textarea name="" id="agreeText4" cols="73" rows="5">위치정보 이용약관에 동의하시면, 위치를 활용한 광고 정보 수신 등을 포함하는 네이버 위치기반 서비스를 이용할 수 있습니다.
+
+제 1 조 (목적)
+이 약관은 네이버 주식회사 (이하 “회사”)가 제공하는 위치정보사업 또는 위치기반서비스사업과 관련하여 회사와 개인위치정보주체와의 권리, 의무 및 책임사항, 기타 필요한 사항을 규정함을 목적으로 합니다.</textarea>
+            </div>
+
+            <!-- 다섯번째 선택 -->
+            <div style="font-weight: bold;" class="agreebox5">
+
+                <div class="agree5">
+                    <input type="checkbox" id="agree5"> 프로모션 정보 수신동의 <span style="color: gray;">(선택)</span>
+                </div>
+            </div>
+            <p id="protxt">네이버에서 제공하는 이벤트/혜택 등 다양한 정보를 휴대전화(네이버앱 알림 또는 문자), 이메일로 받아보실 수 있습니다. 일부 서비스(별도 회원 체계로 운영하거나 네이버 가입 이후 추가 가입하여 이용하는 서비스 등)의 경우, 개별 서비스에 대해 별도 수신 동의를 받을 수 있으며, 이때에도 수신 동의에 대해 별도로 안내하고 동의를 받습니다.</p>
+
+            <!-- 버튼 -->
+            <div class="btns">
+                <button class="btn" style="padding: 15px 97px;">취소</button>
+                <button class="btn" style="padding: 15px 97px;">확인</button>
+            </div>
+
+            <!-- 단체가입 -->
+            <div class="">
+                <p style=" font-size:12px; margin-top:19px;">회사, 동아리 등 단체에서 사용할 ID가 필요하세요? <a href="https://nid.naver.com/user2/join/groupJoin?lang=ko_KR" style="text-decoration: underline;">단체 회원 가입</a></p>
+
+            </div>
+            <div class="footer" >
+                <p style="font-size: 12px; padding-top:30px;">
+                    <a style="color: gray;" href="https://policy.naver.com/rules/service.html">이용약관</a> | 
+                    <a style="color: gray; font-weight:bold" href="https://policy.naver.com/policy/privacy.html">개인정보처리방침</a> | 
+                    <a style="color: gray;" href="https://policy.naver.com/rules/disclaimer.html">책임의 한계와 법적고지</a> | 
+                    <a style="color: gray;" href="https://help.naver.com/support/service/main.help?serviceNo=532&_membership_p.membership_p.membership_26&from=alias">회원정보 고객센터</a></p>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+

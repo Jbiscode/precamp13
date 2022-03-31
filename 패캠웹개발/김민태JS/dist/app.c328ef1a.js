@@ -124,7 +124,10 @@ var ajax = new XMLHttpRequest(); //new XMLH를 변수 ajax에 저장
 
 var content = document.createElement('div');
 var NEWS_URL = 'https://api.hnpwa.com/v0/news/1.json';
-var CONTENT_URL = 'https://api.hnpwa.com/v0/item/@id.json'; // ajax.open('GET',NEWS_URL ,false);        function으로 대체함
+var CONTENT_URL = 'https://api.hnpwa.com/v0/item/@id.json';
+var store = {
+  currentPage: 1
+}; // ajax.open('GET',NEWS_URL ,false);        function으로 대체함
 // ajax.send();
 // console.log(ajax.response);
 // console.log(newsFeed)
@@ -166,7 +169,8 @@ function newsFeed() {
   }
 
   newsList.push('</ul>'); //반복문이 끝났으니 ul태그를 닫아준다(한번만쓰기떄문에 밖에둔것)
-  // container.appendChild(ul);           //똑같은 코드는 오타위험이있어서 이렇게 등록해놓고 사용
+
+  newsList.push("\n    <div>\n        <a href='#'>\uC774\uC804 \uD398\uC774\uC9C0</a>\n        <a href='#'>\uB2E4\uC74C \uD398\uC774\uC9C0</a>\n    </div>\n"); // container.appendChild(ul);           //똑같은 코드는 오타위험이있어서 이렇게 등록해놓고 사용
   // container.appendChild(content);
 
   container.innerHTML = newsList.join(""); //현재 newsList는 배열인데 innerHTML에는 문자열뿐 못오기때문에
@@ -228,7 +232,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "41325" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44069" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
