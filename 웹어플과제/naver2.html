@@ -11,7 +11,7 @@
         margin: 0px;
         padding: 0px;
     }
-    body{
+    body,.background{
         width: auto;
         height: auto;
         display: flex;
@@ -20,6 +20,89 @@
         align-items: center;
         background-color: #f5f6f7;
     }
+    .register_rec{
+        width: 768px;
+        height: 1246px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .register_logo{
+        padding-top: 60px;
+        padding-bottom: 20px;
+    }
+    .register_info{
+        width: 460px;
+        font-size: 14px;
+        margin-top: 19px;
+        margin-bottom: 8px;
+    }
+    .inputbox{
+        padding: 10px 110px 10px 14px;
+        border: 1px solid #dadada;
+        background-color: white;
+        width: 460px;
+        height: 51px;
+        outline: none;
+    }
+    .register_input{
+        border: 0px;
+        outline: none;
+        width: 334px;
+        height: 29px;
+    }
+    .birth{
+        border: 1px solid #dadada;
+        outline: none;
+        width: 146px;
+        height: 51px;
+        padding-left: 12px;
+    }
+    #gender_sel{
+        border: 1px solid #dadada;
+        outline: none;
+        width: 460px;
+        height: 51px;
+        padding: 10px 110px 10px 14px;
+    }
+    .phone_group{
+        width:460px;
+        height:216px;
+        margin-top: 20px;
+    }
+    #country,#cfNum{
+        border: 1px solid #dadada;
+        width: 460px;
+        height: 51px;
+        padding: 10px 7px 10px 14px;
+    }
+    #phoneInput{
+        border: 1px solid #dadada;
+        width: 335px;
+        height: 51px;
+        padding: 10px 15px 10px 14px;
+        outline: none;
+        margin-top: 10px;
+    }
+    #phoneBtn{
+        width: 115px;
+        height: 51px;
+        margin-left: 4px;
+        color: white;
+        background-color: #03c75a;
+        border: 1px solid white;
+    }
+
+    .register_button{
+        font-size: 18px;
+        width: 460px;
+        height: 53px;
+        color: white;
+        background-color: #03c75a;
+        border: 1px solid white;
+        margin-top: 30px;
+    }
 
 
     </style>
@@ -27,49 +110,92 @@
 </head>
 <body>
     <div class="background">
+        <!-- 회원가입창 틀 -->
         <div class="register_rec">
-            <div class="register_logo"><img src="https://ssl.pstatic.net/static/nid/join/m_logo_naver.png" alt="네이버 로고"></div>
-            <input id="email" type="text" class="register_input" placeholder="이메일을 입력해 주세요." oninput="checkValidation()">
-            
-            <input id="pw1" type="password" class="register_input">
-            
-            <input id="pw2" type="password" class="register_input">
-            
-            <input id="name" type="text" class="register_input">
-            
-            <div class="register_phone">
-                <input id="phone1" class="phone" type="text" oninput="changeFocus1()" maxlength="3" oninput="checkValidation()"> -
-                <input id="phone2" class="phone" type="text" oninput="changeFocus2()" maxlength="4" oninput="checkValidation()"> -
-                <input id="phone3" class="phone" type="text" maxlength="4" oninput="checkValidation()">
-            </div>
-            <div class="register_auth">
-                <div class="auth1">
-                    <div id="auth">000000</div>
-                    <button id="auth_button" onclick="inputCheck(),pressedBtn()" style="display: block;" disabled>인증번호 전송</button>
-                </div>
-                <div class="auth2">
-                    <div id="timer" style="display: inline;">0:00</div>
-                    <button id="cf" disabled onclick="cfButton()" >인증완료</button>
-                </div>
-            </div>
-            <div class="register_auth_check">
+            <!-- 맨위 네이버 로고 -->
+            <div class="register_logo"><a href="https://www.naver.com/"><img src="https://ssl.pstatic.net/static/nid/join/m_logo_naver.png" alt="네이버 로고"></a></div>
+            <!-- 아이디 ~ 이름 -->
+            <p class="register_info"><strong>아이디</strong></p>
+            <span class="inputbox">
+                <input id="email" type="text" class="register_input">
+                <span style="color:#8e8e8e; font-size:15px; position:absolute; margin:4px 0px 0px 14px;" >@naver.com</span>
+            </span>
 
+            <p class="register_info"><strong>비밀번호</strong></p>
+            <span class="inputbox">
+                <input id="pw1" type="password" class="register_input">
+            </span>
+
+            <p class="register_info"><strong>비밀번호 재확인</strong></p>
+            <span class="inputbox">
+                <input id="pw2" type="password" class="register_input">
+            </span>
+
+            <p class="register_info"><strong>이름</strong></p>
+            <span class="inputbox">
+                <input id="name" type="text" class="register_input">
+            </span>
+            
+            <!-- 생년월일 -->
+            <p class="register_info"><strong>생년월일</strong></p>
+            <div class="register_birth">
+                <input id="year" class="birth" placeholder="년(4자)">
+                <select class="birth" name="" id="" >
+                    <option value="0">월</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+                <input id="date" class="birth" placeholder="일">
             </div>
-            <select name="location" id="location">
-                <option value="cant_select" disabled selected>지역을 선택하세요</option>
-                <option value="서울">서울</option>
-                <option value="인천">인천</option>
-                <option value="경기">경기</option>
+            <!-- 성별 -->
+            <p class="register_info"><strong>성별</strong></p>
+            <select name="" id="gender_sel">
+                <option value="">성별</option>
+                <option value="">남자</option>
+                <option value="">여자</option>
+                <option value="">선택 안함</option>
             </select>
-            <div class="register_gender">
-                <input class="gender" type="radio" name="gender" value="여성">여성
-                <input class="gender" type="radio" name="gender" value="남성">남성
+
+            <!-- 본인 확인 이메일 -->
+            <p class="register_info"><strong>본인 확인 이메일<span style="font-weight:100; font-size: 12px; color:#8e8e8e;">(선택)</span></strong></p>
+            <input type="text" class="inputbox" placeholder="선택입력">
+
+            <!-- 휴대전화 -->
+            <div class="phone_group">
+                <p class="register_info"><strong>휴대전화</strong></p>
+                <select id="country">
+                    <option value="82">대한민국 +82</option>
+                    <option value="44">영국 +44</option>
+                    <option value="1">미국/캐나다 +1</option>
+                </select>
+                <div class="phoneNum">
+                    <input id="phoneInput" placeholder="전화번호 입력">
+                    <button id="phoneBtn">인증번호 받기</button>
+                </div>
+                <input id="cfNum" type="text" disabled placeholder="인증번호 입력하세요" style="margin-top: 10px;"> 
             </div>
-            <div class="register_line"></div>
+
             <button id="register_button" class="register_button" disabled>가입하기</button>
-
-
-        </div>
+            <!-- 맨밑 -->
+            <div class="footer" >
+                <p style="font-size: 12px; padding:30px;">
+                    <a style="color: gray; text-decoration: none;" href="https://policy.naver.com/rules/service.html">이용약관</a> | 
+                    <a style="color: black; font-weight:bold; text-decoration: none;" href="https://policy.naver.com/policy/privacy.html">개인정보처리방침</a> | 
+                    <a style="color: gray; text-decoration: none;" href="https://policy.naver.com/rules/disclaimer.html">책임의 한계와 법적고지</a> | 
+                    <a style="color: gray; text-decoration: none;" href="https://help.naver.com/support/service/main.help?serviceNo=532&_membership_p.membership_p.membership_26&from=alias">회원정보 고객센터</a>
+                </p>
+            </div>
+            
     </div>
 </body>
 </html>
