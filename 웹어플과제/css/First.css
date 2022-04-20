@@ -1,0 +1,76 @@
+@import url(default.css);
+
+body{
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f6f7;;
+}
+.wrap{
+    width: 768px;
+    height: 991px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.mainlogo{
+    height: 158px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.agreebox1{
+    max-width: 460px;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.agreebox2, .agreebox3,.agreebox4{
+    display: flex;
+    flex-direction: column;
+    padding-top: 35px;
+    font-size: 14px;
+}
+a{
+    text-decoration: none;
+}
+#kidsinfo{
+    font-weight: 400;
+    font-size: 12px;
+    background-color: #ffffff;
+    border: 1px solid #08a600;
+    color:#08a600;
+    padding: 6px 8px;
+    margin-left: 120px;
+}
+.agree2,.agree3,.agree4{
+    margin-bottom: 12px;
+}
+#agreeText2, #agreeText3,#agreeText4{
+    margin-top: 4px;
+    padding-top: 12px;
+    font-size: 12px;
+}
+.agreebox5{
+    font-size: 14px;
+    padding-top: 30px;
+    margin-right: 245px;
+}
+#protxt{
+    max-width: 460px;
+    font-size: 12px;
+    padding-top: 10px;
+    margin-bottom: 30px;
+}
+.btn{
+    font-size:18px; 
+    width:225px; 
+    padding: 15px; 
+    color:white;  
+    margin:0px 5px; 
+    border:1px solid white;
+}

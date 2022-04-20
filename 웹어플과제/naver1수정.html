@@ -6,96 +6,14 @@
     <meta charset="UTF-8">
     <title>네이버 : 회원가입</title>
     <link type="image/x-icon" rel="shortcut icon" href="https://mblogthumb-phinf.pstatic.net/MjAxNzA1MjVfODEg/MDAxNDk1NzEwNjY2MjM1.F1vQ76vAO1zZ2Jy3KSUGrKSh_AVyucCDVSuIivfDzx8g.6d7pNmgwXgT1bsb_lnLXGATePjGlyd1iXXulHKbMzOYg.PNG.krazymouse/%EB%84%A4%EC%9D%B4%EB%B2%84.png?type=w800">
+    <link rel="stylesheet" href="./css/First.css">
     
-    <style>
-        /* */
-        *{
-            box-sizing: border-box;
-            margin: 0px;
-            padding: 0px;
-        }
-    
-        body{
-            width: auto;
-            height: auto;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            background-color: #f5f6f7;;
-        }
-        .wrap{
-            width: 768px;
-            height: 991px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-        }
-        .mainlogo{
-            height: 158px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .agreebox1{
-            max-width: 460px;
-            text-decoration: underline;
-            font-weight: bold;
-        }
-        .agreebox2, .agreebox3,.agreebox4{
-            display: flex;
-            flex-direction: column;
-            padding-top: 35px;
-            font-size: 14px;
-        }
-        a{
-            text-decoration: none;
-        }
-        #kidsinfo{
-            font-weight: 400;
-            font-size: 12px;
-            background-color: #ffffff;
-            border: 1px solid #08a600;
-            color:#08a600;
-            padding: 6px 8px;
-            margin-left: 120px;
-        }
-        .agree2,.agree3,.agree4{
-            margin-bottom: 12px;
-        }
-        #agreeText2, #agreeText3,#agreeText4{
-            margin-top: 4px;
-            padding-top: 12px;
-            font-size: 12px;
-        }
-        .agreebox5{
-            font-size: 14px;
-            padding-top: 30px;
-            margin-right: 245px;
-        }
-        #protxt{
-            max-width: 460px;
-            font-size: 12px;
-            padding-top: 10px;
-            margin-bottom: 30px;
-        }
-        .btn{
-            font-size:18px; 
-            width:225px; 
-            padding: 15px; 
-            color:white;  
-            margin:0px 5px; 
-            border:1px solid white;
-        }
-    </style>
 
 </head>
 
 
 <body>
-    <form action="naver2-2017390355사재빈.html" id="joinForm"  method="get" enctype="multipart/form-data">
+    <form action="naver2수정.html" id="joinForm"  method="get" enctype="multipart/form-data">
         <!--전체 포함 감싸는 div -->
         <div class="wrap">
 
@@ -119,7 +37,7 @@
 
             <!-- 첫번째 선택 -->
             <div class="agreebox1">
-                <input type="checkbox" id="agree1"> 네이버 이용약관, 개인정보 수집 및 이용, 위치정보 이용약관(선택), 프로모션 정보 수신(선택)에 모두 동의합니다.
+                <label for="agree1"><input type="checkbox" class="check_image1" id="agree1"> 네이버 이용약관, 개인정보 수집 및 이용, 위치정보 이용약관(선택), 프로모션 정보 수신(선택)에 모두 동의합니다.</label>
             </div>
 
 
@@ -127,7 +45,7 @@
             <div style="font-weight: bold;" class="agreebox2">
 
                 <div class="agree2">
-                    <input type="checkbox" id="agree2"> 네이버 이용약관 동의 <span style="color: #08a600;">(필수)</span>
+                    <label for="agree2"><input type="checkbox" class="check_image2" id="agree2"> 네이버 이용약관 동의 <span style="color: #08a600;">(필수)</span></label>
                 </div>
 
                 <textarea name="" id="agreeText2" cols="73" rows="5">여러분을 환영합니다.
@@ -139,7 +57,7 @@
             <!-- 세번째 선택 -->
             <div style="font-weight: bold;" class="agreebox3">
                 <div class="agree3">
-                    <input type="checkbox" id="agree3"> 개인정보 수집 및 이용 동의 <span style="color:#08a600;">(필수)</span>
+                    <label for="agree3"><input type="checkbox" class="check_image2" id="agree3"> 개인정보 수집 및 이용 동의 <span style="color:#08a600;">(필수)</span></label>
                     <a href="https://nid.naver.com/user2/V2Join?m=kidGuide" target="_blank"><span id="kidsinfo">어린이용 안내</span></a>
                 </div>
 
@@ -153,7 +71,7 @@
             <!-- 네번째 선택 -->
             <div style="font-weight: bold;" class="agreebox4">
                 <div class="agree4">
-                    <input type="checkbox" id="agree4"> 개인정보 수집 및 이용 동의 <span style="color: gray;">(선택)</span>
+                    <label for="agree4"><input type="checkbox" class="check_image2" id="agree4"> 개인정보 수집 및 이용 동의 <span style="color: gray;">(선택)</span></label>
                 </div>
 
                 <textarea name="" id="agreeText4" cols="73" rows="5">위치정보 이용약관에 동의하시면, 위치를 활용한 광고 정보 수신 등을 포함하는 네이버 위치기반 서비스를 이용할 수 있습니다.
@@ -167,7 +85,7 @@
             <div style="font-weight: bold;" class="agreebox5">
 
                 <div class="agree5">
-                    <input type="checkbox" id="agree5"> 프로모션 정보 수신동의 <span style="color: gray;">(선택)</span>
+                    <label for="agree5"><input type="checkbox" class="check_image2" id="agree5"> 프로모션 정보 수신동의 <span style="color: gray;">(선택)</span></label>
                 </div>
             </div>
             <p id="protxt">네이버에서 제공하는 이벤트/혜택 등 다양한 정보를 휴대전화(네이버앱 알림 또는 문자), 이메일로 받아보실 수 있습니다. 일부 서비스(별도 회원 체계로 운영하거나 네이버 가입 이후 추가 가입하여 이용하는 서비스 등)의 경우, 개별 서비스에 대해 별도 수신 동의를 받을 수 있으며, 이때에도 수신 동의에 대해 별도로 안내하고 동의를 받습니다.</p>
