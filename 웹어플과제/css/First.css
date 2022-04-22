@@ -123,3 +123,14 @@ a{
     margin:0px 5px; 
     border:1px solid white;
 }
+.footer_link{
+    color: #333;
+    text-decoration: none;
+}
+.footer_link1{
+    color: black; font-weight:bold;
+}
+.footer_link:hover{
+    text-decoration: underline;
+    color: #08a600;
+}

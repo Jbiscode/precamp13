@@ -35,6 +35,13 @@ body,.background{
     height: 51px;
     outline: none;
 }
+#pw1_icon{
+    display: inline-block; width: 24px; height: 24px; position: relative; top: -27px; right: -405px; background-size: 135px 81px; background-image: url(https://static.nid.naver.com/images/ui/join/m_icon_pw_step.png);
+}
+#pw2_icon{
+    display: inline-block; width: 24px; height: 24px; position: relative; top: -27px; right: -405px; background-size: 135px 81px; background-image: url(https://static.nid.naver.com/images/ui/join/m_icon_pw_step.png);
+    background-position: -29px 80px;
+}
 .register_input{
     border: 0px;
     outline: none;
