@@ -1,4 +1,4 @@
-@import url(default.css);
+@import url(./default.css);
 
 body,.background{ width: auto; height: auto; display: flex; flex-direction: row; justify-content: center; align-items: center; background-color: #f5f6f7; }
 label:hover{cursor: pointer;}

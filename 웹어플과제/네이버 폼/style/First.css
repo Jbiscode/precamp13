@@ -1,4 +1,4 @@
-@import url(default.css);
+@import url(./default.css);
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 
 * {font-family: 'Noto Sans KR', sans-serif;}
@@ -10,7 +10,7 @@ body {width: auto; height: auto; display: flex; flex-direction: row; justify-con
 .check_image1,.check_image2 {display: none;}
 .check_image1 + label {display: inline-block; width: 24px; height: 24px;  position: relative; top: 12px; right: 5px; background-image: url(https://static.nid.naver.com/images/ui/myinfo/pc_check_off_24.png);}
 .check_image1:checked + label {background-image: url(https://static.nid.naver.com/images/ui/myinfo/pc_check_on_l_24.png);}
-#agree1,#agree1_txt,#agree2,#agree2_txt,#agree3,#agree3_txt,#agree4,#agree4_txt,#agree5,#agree5_txt,.btn:hover{cursor: pointer;}
+#agree1,#agree1_txt,#agree2,#agree2_txt,#agree3,#agree3_txt,#agree4,#agree4_txt,#agree5,#agree5_txt,.btn { cursor: pointer;}
 .check_image2 + label {display: inline-block; width: 20px; height: 20px; padding-top: 12px;  position: relative; top: 5px; right:2px; background-image: url(https://static.nid.naver.com/images/ui/myinfo/pc_chcek_off_s_20.png);}
 .check_image2:checked + label {background-image: url(https://static.nid.naver.com/images/ui/myinfo/pc_chcek_on_s_20.png);}
 
