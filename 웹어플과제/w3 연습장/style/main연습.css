@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
 
 /*1 래퍼 */
-.wrapper {display: flex; flex-direction: column; }
+.background {width: 100%; height: 3000px;}
 
 /*3 헤더탑 */
 .header_top{ padding: 0px 16px 0px 12px; height: 75px; overflow: hidden;}
@@ -20,7 +20,7 @@
 #header_top_righticon_Login:hover {background-color: #059862; cursor: pointer;}
 
 /*3 헤더바텀 */
-.header_bottom {height: 44px; overflow: hidden; background-color: #282A35;}
+.header_bottom { position: sticky; top: 0; height: 44px; overflow: hidden; background-color: #282A35;}
 .header_bottom_logo {float:left; height: 44px; padding: 14px 17px 13px; color: white;}
 .header_bottom_lefticon_HTML{font-family: 'Source Sans Pro', sans-serif; letter-spacing: 0.75px; font-size: 17px;  font-weight: 600; float: left; display: block; height: 44px;  color: #f1f1f1; text-decoration: none; padding: 11px 18px 9px;}
 .header_bottom_lefticon{font-family: 'Source Sans Pro', sans-serif; letter-spacing: 1px; font-size: 17px;  font-weight: 600; float: left; display: block; height: 44px;  color: #f1f1f1; text-decoration: none; padding: 11px 15px 9px;}
@@ -29,45 +29,11 @@
 .header_bottom_lefticon:hover{background-color: #000;}
 
 /* 바디 */
-.body{display: flex; height: 4300px; width: 100%;}
+.leftnav {height: 100%; padding-top: 44px; display: block; width: 220px;}
 /* 바디왼쪽네비 */
-.body_left_nav{ position: sticky; top: 0; display: flex; flex-direction: column; height: 21.6%; width: 220px; background-color: #E7E9EB; overflow-y: scroll; overflow-x: hidden; padding-bottom: 50px;}
+.body_left_nav{position: sticky; top:44px; display: inline; flex-direction: column;height: 900px; width: 220px; background-color: #E7E9EB; overflow-y: scroll; overflow-x: hidden; padding-bottom: 50px;}
 .body_left_nav > h3 { padding: 0px 0px 0px 16px; font-size: 21px; margin: 16px 0px 4px 0px; font-weight: 500;}
 .body_left_nav > a {padding: 2px 1px 1px 16px; font-size: 15px; line-height: 22.5px; color: black; text-decoration: none;}
 .body_left_nav > a:hover {background-color: #cccccc;}
 
 /* 바디컨테이너 */
-.body_container{display: flex; flex-direction: column;}
-
-
-/* 컨테이너탑 */
-.container_top{display: flex; flex-direction: row;}
-
-/* 메인 */
-.main{display: flex; flex-direction: column; padding: 16px 32px 32px;  width: 1330px; border-right: 1px solid rgba(208, 201, 201, 0.376);}
-#main_leaderboard{ width: 100%; height: 90px; margin: 0px -16px;}
-.main > h1{ font-size: 42px; margin: 10px 0px; font-weight: 500;}
-hr {border-top: 1px solid rgba(225, 220, 220, 0.19); height: 1px; margin: 0px -15px;}
-.main > h2 {margin: 24px 0px 18px; font-size: 30px; font-weight: 400;}
-.main > p {font-size: 16px; margin: 0px 0px 18px 0px;}
-#main_home_next{width: 1264px; display: flex; justify-content: space-between;}
-.home_next{font-family: 'Source Sans Pro', sans-serif; width: 94px; height: 45px; background-color: #04AA6D; font-size: 18px; font-weight: 600; color: white; text-align: center; line-height: 28px; padding: 8px 16px; border-radius: 5px;}
-.home_next:hover{background-color: #059862; cursor: pointer;}
-/* 메인박스1 */
-#main_box1{display: flex; flex-direction: column; justify-content: space-between; width: 1330px; height: 310px; margin: 24px -32px; padding: 32px; background-color: #D9EEE1;}
-#main_box1 > p{margin: 15px 0px 0px 0px; font-size: 16px;}
-#main_box1 > a{display: block; text-decoration: none; height: 43px; ;line-height: 28px; color: white; font-size: 16px; font-weight: 700; padding: 8px 25px; border-radius: 5px;}
-#Tutorial_1 { margin: 20px 0px 16px; background-color: #04AA6D; width: 289px;}
-#Tutorial_1:hover {background-color: #059862; }
-#Tutorial_2 { margin: 9px 0px 1px; background-color: #282A35; width: 257px;}
-#Tutorial_2:hover { background-color: #000;}
-#Tutorial_2 > span{font-weight: 600; color:black; font-size:12px; line-height: 20px; padding:4px 15px; border-radius: 20px; background-color:#fff4a3 ; position: absolute; top:592px; left: 233px; transform: rotate(-21deg); }
-
-/* 매안박스2 */
-#main_box2 { width: 1304px; height: 433px; display: flex; flex-direction: column; justify-content: space-between; background-color: #E7E9EB; border-radius: 10px; margin: 0px -20px 24px; padding: 8px 20px;}
-#main_box2 > h3 {margin: 10px 0px; font-size: 24px; font-weight: 500; }
-#main_codebox{ font-family: 'PT Sans', sans-serif; font-size: 14px; line-height: 23px; letter-spacing: 1.5px; width: 1265px; height: 286px; border-left: 4px solid #04AA6D; background-color: white; margin: 12px 0px; padding: 8px 12px;}
-.tagcolor{color: #0000cd;}
-.tagnamecolor{color: #a52a2a}
-#main_box2 > a {font-family: 'Source Sans Pro', sans-serif; text-align: center; width: 147px; height: 37px; font-weight: 600; padding: 6px 18px; text-decoration: none; background-color: #04AA6D; color: white; margin: 0px 0px 16px; font-size: 17px; border-radius: 5px;}
-#main_box2 > a:hover{background-color: #059862;}

@@ -6,6 +6,7 @@ label:hover{cursor: pointer;}
 .register_logo{ padding-top: 60px; padding-bottom: 20px; }
 .register_info{ width: 460px; font-size: 14px; margin-top: 19px; margin-bottom: 8px; }
 .inputbox{ padding: 10px 110px 10px 14px; border: 1px solid #dadada; background-color: white; width: 460px; height: 51px; outline: none; }
+#id_span{ color:#8e8e8e; font-size:15px; position:relative; margin:4px 0px 0px 14px; top: -26px; right: -332px;}
 #pw1_icon{ display: inline-block; width: 24px; height: 24px; position: relative; top: -27px; right: -405px; background-size: 135px 81px; background-image: url(https://static.nid.naver.com/images/ui/join/m_icon_pw_step.png);}
 #pw2_icon{display: inline-block; width: 24px; height: 24px; position: relative; top: -27px; right: -405px; background-size: 135px 81px; background-image: url(https://static.nid.naver.com/images/ui/join/m_icon_pw_step.png); background-position: -29px 80px;}
 .inputbox,.register_input,.birth,#gender_sel,#country,#phoneInput:hover{ cursor: pointer; }

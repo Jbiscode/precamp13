@@ -3,6 +3,7 @@
 
 * {font-family: 'Noto Sans KR', sans-serif;}
 body {width: auto; height: auto; display: flex; flex-direction: row; justify-content: center; align-items: center; background-color: #f5f6f7;}
+#lang_sel{margin-left: 650px; border: 1px solid rgb(218,218,218); color:#333; padding:8px 8px 7px 9px;}
 .wrap { width: 768px; height: 991px; display: flex; flex-direction: column; justify-content: center; align-items: center;}
 .mainlogo { height: 158px; display: flex; justify-content: center; align-items: center;}
 .check_image1 { padding-right: 50px;}
