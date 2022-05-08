@@ -9,7 +9,6 @@
 /*3 헤더탑 */
 .header_top{ padding: 0px 16px 0px 12px; height: 75px; overflow: hidden;}
 .header_top_logo { float: left; padding: 16px; height: 100%; }
-.header_top_logo:hover { opacity: 0.7;}
 .header_top_lefticon{ font-family: 'Source Sans Pro', sans-serif; font-size: 18px; font-weight: 600; color: #282A35; float: left; padding: 24px 16px; height: 100%; background-color: white; line-height: 28px;}
 .header_top_lefticon:hover{ color: white; background-color: #04AA6D;}
 .header_top_new{ font-family: 'Source Sans Pro', sans-serif; font-size: 11px; font-weight: 700; margin-left: 3px; padding: 3px 10px; border: 1px solid black; border-radius: 15px; color: #282A35; background-color: white; position: relative; top: -2px;}
@@ -22,7 +21,7 @@
 #header_top_righticon_Login:hover {background-color: #059862; cursor: pointer;}
 
 /*3 헤더바텀 */
-.header_bottom { z-index: 5; height: 44px; overflow: hidden; background-color: #282A35; position: sticky; top: 0;}
+.header_bottom {height: 44px; overflow: hidden; background-color: #282A35; position: sticky; top: 0;}
 .header_bottom_logo {float:left; height: 44px; padding: 14px 17px 13px; color: white;}
 .header_bottom_lefticon_HTML{font-family: 'Source Sans Pro', sans-serif; letter-spacing: 0.75px; font-size: 17px;  font-weight: 600; float: left; display: block; height: 44px;  color: #f1f1f1; text-decoration: none; padding: 11px 18px 9px;}
 .header_bottom_lefticon{font-family: 'Source Sans Pro', sans-serif; letter-spacing: 1px; font-size: 17px;  font-weight: 600; float: left; display: block; height: 44px;  color: #f1f1f1; text-decoration: none; padding: 11px 15px 9px;}
@@ -30,13 +29,8 @@
 .header_bottom_lefticon_HTML:hover{background-color: #000;}
 .header_bottom_lefticon:hover{background-color: #000;}
 
-
-.header_bottom_righticon_Group{float: right;}
-.header_bottom_righticon{ height: 44px;}
-.header_bottom_righticon:hover{ cursor: pointer;}
-
 /* 바디 */
-.body{display: flex; height: 100%; width: 100%;}
+.body{display: flex; height: 4300px; width: 100%;}
 /* 바디왼쪽네비 */
 .body_left_nav{ position: sticky; top: 44px; display: flex; flex-direction: column; height: 885px; width: 220px; background-color: #E7E9EB; overflow-y: scroll; overflow-x: hidden; padding-bottom: 50px;}
 .body_left_nav > h3 { padding: 0px 0px 0px 16px; font-size: 21px; margin: 16px 0px 4px 0px; font-weight: 500;}
@@ -48,25 +42,22 @@
 
 
 /* 컨테이너탑 */
-.container_top{display: flex; flex-direction: row; height: 3446px; width: 1043px; border-bottom: 1px solid rgba(208, 201, 201, 0.376); }
+.container_top{display: flex; flex-direction: row; }
 
 /* 메인 */
-.main{display: flex; flex-direction: column; padding: 16px 32px 32px;  width: 869px; border-right: 1px solid rgba(208, 201, 201, 0.376); border-bottom: 1px solid rgba(208, 201, 201, 0.376);}
+.main{display: flex; flex-direction: column; padding: 16px 32px 32px;  width: 869px; border-right: 1px solid rgba(208, 201, 201, 0.376);}
 .main > h1{ font-size: 42px; margin: 10px 0px; font-weight: 500;}
-
 .hr1 {border-top: 1px solid rgba(225, 220, 220, 0.19); height: 1px; margin: 0px -15px;}
 .hr2 {border-top: 1px solid rgba(225, 220, 220, 0.19); height: 1px; margin: 20px -15px;}
 .main > h2 {margin: 24px 0px 18px; font-size: 30px; font-weight: 400;}
 .main > p {font-size: 16px; margin: 0px 0px 18px 0px;}
 .letter_space{letter-spacing: 0.6px;}
 .word_space{word-spacing: 1px;}
-.main_home_next{width: 804px; display: flex; justify-content: space-between;}
+#main_home_next{width: 804px; display: flex; justify-content: space-between;}
 .home_next{font-family: 'Source Sans Pro', sans-serif; width: 94px; height: 45px; background-color: #04AA6D; font-size: 18px; font-weight: 600; color: white; text-align: center; line-height: 28px; padding: 8px 16px; border-radius: 5px;}
 .home_next:hover{background-color: #059862; cursor: pointer;}
 #btn_example{font-size: 15px; color:black; text-decoration: none; border-radius: 5px; background-color: #E7E9EB; padding: 6px 18px; width:202px; font-weight: bold; line-height: 24px;}
 #btn_example:hover{color: white; background-color: #059862;}
-#btn_quiz {color: white; background-color: #2196f3; padding: 8px 16px; border-radius: 5px; font-size: 15px; font-weight: 600;}
-#btn_quiz:hover { background-color: #0d8bf2; cursor: pointer;}
 
 /* 메인박스1 내부*/
 #main_box1{display: flex; flex-direction: column; justify-content: space-between; width: 869px; height: 310px; margin: 24px -32px; padding: 32px; background-color: #D9EEE1;}
@@ -94,70 +85,6 @@
 .box3_h2_b {color: black;}
 #main_exercise { width: 804px; height: 344px; padding: 16px; background-color: white;}
 #main_exercise > p { margin: 18px 0px;}
-#main_exercise > button { padding: 7px 18px; margin: 0px 0px 16px; background-color: #04AA6D; color: white; font-weight: 600; border: none; border-radius: 5px; font-size: 15px; line-height: 25px;}
-#main_exercise > button:hover { background-color: #059862; cursor: pointer;}
-#main_exercise > p > a { color: black;}
-#main_exercise > p > a:hover { color: #059862;}
 #main_exercise_inner {width: 772px; height: 59px; padding: 16px; background-color: #E7E9EB;}
 #main_exercise_inner > span { font-size: 18px; letter-spacing: 0.6px}
-#main_exercise_inner > input { width: 54px; height: 23px; padding: 1px; border: none;}
-
-
-/* 메인박스4 내부 */
-#main_box4{height: 392px; width: 836px; margin: 0px -16px; padding: 0px 8px;}
-.btn_references{ border-radius: 5px; width: 273px; height: 78px; display: inline; padding: 0px 4px;}
-.btn_box4 {background-color: #E7E9EB; border-radius: 5px; width: 257px; height: 62px; margin: 0px 0px 16px; padding: 20px 0px; text-align: center; display: inline-block;}
-.btn_box4:hover {background-color: black; cursor: pointer; color: white;}
-
-/* 메인박스5 내부 */
-#main_box5 { color: #FFC0C7; margin: 16px 0px 125px; padding: 0px 60px 50px; width: 805px; height: 470px; border-radius: 16px; background-color: #282A35;}
-#main_box5 > h2 {margin:  50px 0px; font-size: 50px; line-height: 75px;}
-#main_box5 > p {margin:  42px 0px; font-size: 37px; line-height: 63px; font-weight: 600;}
-.btn_certi {display: inline; margin: 0px 0px 16px; background-color: #04AA6D; font-size: 16px; padding: 20px 55px; color: white; border-radius: 50px; font-weight: 600; position: relative; top: -185px;}
-.btn_certi:hover {background-color: #059862; cursor: pointer;}
-#w3_cert_arrow{ position: relative; transform: rotate(10deg); width: 220px; z-index: 1;  top: -77px; right: -108px;}
-#w3_cert_badge{ position: relative; right: -51px; top: -1px; width: 220px; height: 220px; transform: rotate(10deg);}
-
-/* 메인 오른쪽 */
-.main_right { width: 174px; height: 1300px; padding: 16px 8px; display: flex; flex-direction: column; }
-.right_sidebar { border-radius: 5px; color: white; padding-top: 25px; background-color: #282A35; width: 158px; height: 284px; text-align: center;}
-.right_sidebar > span { font-size: 12px; font-weight: bold; padding: 6px 20px; left: -20px; top: -10px; text-align: center; color: black; border-radius: 25px; background-color: #fff4a3;}
-.right_sidebar > p { font-size: 13px; font-weight: 600; line-height: 1.5; margin: 16px 0px;}
-.right_sidebar > img { max-width:100%;padding:5px 10px 25px 10px}
-.right_sidebar > img:hover { opacity: 0.5; cursor: pointer;}
-.right_sidebar > a {color: #FFC0C7;}
-.right_sidebar > a:hover {cursor: pointer;}
-.right_sidebar2{ text-align: center;}
-.right_sidebar2 > h4 { margin: 30px 0px 10px; font-weight: 100; font-size: 20px;}
-.right_sidebar2 > h4:hover { color: #059862; cursor: pointer;}
-.right_sidebar2 > img { cursor: pointer;}
-.sidebar_img { width: 27px; height: 27px; margin: 30px 2px;}
-.sidebar_img:hover { opacity: 0.5; cursor: pointer;}
-.right_sidebar3 { border-radius: 5px; color: #FFC0C7; margin-bottom: 32px; width: 158px; height: 300px; background-color: #282A35; text-align: center;}
-.right_sidebar3 > p { font-size: 17px; margin: 22px 0px; font-weight: 600;}
-.right_sidebar3 > svg { width: 100px; height: 100px; cursor: pointer;}
-.right_sidebar3 > a { background-color: #04AA6D; color: white; width: 158px; height: 47px; display: block; line-height: 45px; font-weight: 600; margin-top: 38px; border-radius: 0px 0px 5px 5px;}
-.right_sidebar3 > a:hover{background-color: #059862; cursor: pointer;}
-.right_sidebar4 { width: 158px; height: 353px; background-color: #96D4D4; text-align: center; padding: 10px 0px 0px; border-radius: 5px;}
-.right_sidebar4 > h4 { font-size: 20px; font-weight: 100; margin: 10px 0px; cursor: pointer;}
-.right_sidebar4 > img { max-width:100%; margin:16px 0px;}
-.right_sidebar4 > img:hover { opacity: 0.5; cursor: pointer;}
-.right_sidebar4 > a { background-color: #282A35; color: white; width: 158px; height: 47px; display: block; line-height: 45px; font-weight: 600; margin-top: 14px; border-radius: 0px 0px 5px 5px;}
-.right_sidebar4 > a:hover { background-color: #059862; cursor: pointer;}
-
-/* 컨테이너 바텀 */
-.container_bottom{ width: 1043px; height: 770px; padding: 32px;}
-#btns_container_bottom { display: flex; justify-content: space-between;}
-.btn_container_bottom { background-color: #E7E9EB; display: inline-block; padding: 8px 16px; width: 232px; height: 38px; text-align: center; border-radius: 5px;}
-.btn_container_bottom:hover { cursor: pointer; background-color: black; color: white;}
-.footer_group { width: 979px; height: 313px; display: flex; justify-content: space-between;}
-.footer_links { width: 240px; height: 303px; display: inline-block; text-align: center; font-size: 0px; display: flex; flex-direction: column; align-items: center;}
-.footer_links > a { font-size: 14px;}
-.footer_links > a:hover { color: #059862; text-decoration: underline; cursor: pointer;}
-h5 { font-size: 18px; margin: 10px 0px;}
-#btn_footer { background-color: #282a35; margin: 16px 0px 0px; padding: 8px 16px; color: white; border-radius: 5px; width: 128px; height: 34px; text-decoration: none;}
-#btn_footer:hover { background-color: #000000; text-decoration: none;}
-.footer_text { font-size: 12px; letter-spacing: 0.5px; text-align: center; color: rgb(139, 139, 139);}
-.footer_text > a:hover {color: #059862; text-decoration: underline; cursor: pointer;}
-.footer_logo { width: 45px; height: 42px;}
-.footer_logo:hover { cursor: pointer; opacity: 0.7;}
+#main_exercise_inner > input { width: 54px; height: 23px; padding: 1px;}
