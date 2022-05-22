@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>2017390355 사재빈 계산기함수</title>
+    <script>
+        var calObject = function(){
+            this.historyCal = [];
+            this.historyResult = [];
+
+            this.printHistory = function(){
+                var i, len = this.historyCal.length;
+                for(i=0;i<len;i++){
+                    console.log(this.historyCal[i], "=",this.historyResult[i]);
+            }
+            }
+            this.inputHistory = function(calStr, resultStr){
+                this.historyCal.push(calStr);
+                this.historyResult.push(resultStr);
+            }
+            this.add = function(a,b){
+                var calStr = a+"+"+b;
+                var result = a+b;
+                this.inputHistory(calStr , String(result))
+                return result;
+            }
+            this.minus = function(a,b){
+                var calStr = a+"-"+b;
+                var result = a-b;
+                this.inputHistory(calStr , String(result))
+                return result;
+            }
+            this.multi = function(a,b){
+                var calStr = a+"x"+b;
+                var result = a*b;
+                this.inputHistory(calStr , String(result))
+                return result;
+            }
+            this.divide = function(a,b){
+                var calStr = a+"/"+b;
+                var result = a/b;
+                this.inputHistory(calStr , String(result))
+                return result;
+            }
+            this.remain = function(a,b){
+                var calStr = a+"%"+b;
+                var result = a%b;
+                this.inputHistory(calStr , String(result))
+                return result;
+            }
+        }
+        var cal1 = new calObject();
+        var cal2 = new calObject();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
