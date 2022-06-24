@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>        
+        .banner_wraper { height: 60px; width: 1130px; position: absolute; overflow: hidden; }
+        .banner_wraper img { height: 45px; position: absolute;  }
+    </style>
+    <script src="./jquery.js"></script>
+    <script type="text/javascript">
+        //client rolling banner   
+        window.onload = function() {            
+            var bannerLeft=0;            
+            var first=1;            
+            var last;            
+            var imgCnt=11;            
+            var $img = $(".banner_wraper img");            
+            var $first;            
+            var $last;            
+            $img.each(function(){   
+                // 5px 간격으로 배너 처음 위치 시킴                
+                $(this).css("left",bannerLeft);                
+                bannerLeft += $(this).width()+5;                
+                $(this).attr("id", "banner"+(++imgCnt));  
+                // img에 id 속성 추가            
+            });                        
+            if( imgCnt > 9){                
+                //배너 9개 이상이면 이동시킴                
+                last = imgCnt;                
+                setInterval(function() {                    
+                    $img.each(function(){                        
+                        $(this).css("left", $(this).position().left-1); 
+                        // 1px씩 왼쪽으로 이동                    
+                    });                    
+                    $first = $("#banner"+first);                    
+                    $last = $("#banner"+last);                    
+                    if($first.position().left < -200) {    
+                        // 제일 앞에 배너 제일 뒤로 옮김                        
+                        $first.css("left", $last.position().left + $last.width()+5 );                        
+                        first++;                        
+                        last++;                        
+                        if(last > imgCnt) { last=1; }                           
+                        if(first > imgCnt) { first=1; }                    
+                    }               
+                }, 50);   
+                //여기 값을 조정하면 속도를 조정할 수 있다.(위에 1px 이동하는 부분도 조정하면 //깔끔하게 변경가능하다            
+            }};
+        </script>
+    
+</head>
+<body>
+    <div class="banner_wraper">    
+        <img id="banner1" src="./main_card1.png">
+        <img id="banner2" src="./main_card3.png">
+        <img id="banner3" src="./main_card1.png">
+        <img id="banner4" src="./main_card3.png">
+        <img id="banner5" src="./main_card1.png">
+        <img id="banner6" src="./main_card3.png">
+        <img id="banner7" src="./main_card1.png">
+        <img id="banner6" src="./main_card3.png">
+        <img id="banner7" src="./main_card1.png">
+        <img id="banner6" src="./main_card3.png">
+        <img id="banner7" src="./main_card1.png">
+    </div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+* {margin: 0; padding: 0;}
+ul,li{list-style-type: none;}
+
+#leftBtn {float: left;}
+#rightBtn {float: left;}
+#slider {overflow: hidden; float: left;}
+#banners li {float:left; height: 100px; background: #eee;}

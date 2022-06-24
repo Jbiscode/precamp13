@@ -1,0 +1,125 @@
+@import url(common.css);
+
+:root {
+  /* font-size */
+  --big-font: 2rem;
+  --medium-font: 1.5rem;
+  --base-font: 1rem;
+  --small-font: 0.8rem;
+  /* Cololr */
+  --white-color: #fff;
+  --black-color: #140a00;
+  --grey-color: #929292;
+  /* size */
+  --small-padding: 20px;
+  --medium-padding: 50px;
+  --big-padding: 100px;
+}
+
+/* ----main---- */
+.main .wrapper {
+  text-align: center;
+  background-color: rgb(241, 241, 241);
+}
+.main .wrapper .login-box {
+  display: inline-block;
+  width: 500px;
+  padding: var(--medium-padding);
+  margin: var(--medium-padding) 0;
+  background-color: white;
+}
+.main .wrapper .login-box .title {
+  padding-bottom: var(--medium-padding);
+}
+.login-box .input-area {
+  display: flex;
+  justify-content: space-between;
+}
+.login-box .input-area .input-box input {
+  display: flex;
+  flex-direction: column;
+  width: 330px;
+  font-size: 1.3rem;
+  padding: calc((var(--small-padding)) / 2);
+  border: 1px solid rgb(172, 172, 172);
+  outline: none;
+}
+.login-box .input-area .input-box input:first-child {
+  margin-bottom: var(--small-padding);
+}
+.login-box .input-area .login-Btn {
+  margin-left: var(--small-padding);
+}
+.login-box .input-area .login-Btn button {
+  width: 117px;
+  height: 117px;
+  font-size: 1.3rem;
+  color: white;
+  background-color: rgb(92, 224, 132);
+  border: none;
+  cursor: pointer;
+}
+.login-box .confirm {
+  text-align: left;
+  font-size: var(--small-font);
+  letter-spacing: -1px;
+  padding-top: var(--medium-padding);
+}
+.login-box .confirm div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--small-padding) 0;
+}
+.login-box .confirm div + div {
+  border-top: 1px solid rgb(211, 211, 211);
+}
+.login-box .confirm div button {
+  width: 122px;
+  border: none;
+  cursor: pointer;
+  letter-spacing: -1px;
+  padding: calc((var(--small-padding)) / 2);
+}
+.login-box .help {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--small-font);
+  margin-top: var(--small-padding);
+}
+.login-box .help .find a:first-child {
+  padding-right: calc((var(--small-padding)) / 2);
+}
+
+/* -----media query----- */
+
+@media all and (max-width: 767px) {
+  .main .wrapper {
+    background-color: white;
+  }
+  .main .wrapper .login-box {
+    padding: 0;
+    margin: 0;
+    width: 90%;
+  }
+  .main .login-box .input-area {
+    display: flex;
+    flex-direction: column;
+  }
+  .login-box .input-area .input-box {
+    display: flex;
+    flex-direction: column;
+  }
+  .login-box .input-area .input-box input {
+    width: auto;
+    margin-bottom: var(--small-padding);
+  }
+  .login-box .input-area .login-Btn {
+    margin: 0;
+  }
+  .login-box .input-area .login-Btn button {
+    width: 100%;
+    height: auto;
+    padding: calc((var(--small-padding)) / 2) 0;
+  }
+}

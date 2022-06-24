@@ -8,18 +8,25 @@
             this.historyCal = [];
             this.historyResult = [];
 
-            this.printHistory = function(){
-                var i, len = this.historyCal.length;
+            this.printHistory = function(index){
+                var i,len = this.historyCal.length;
+                
+                if (index>=len){
+                    console.log("인덱스에 해당하는 값이 존재하지 않습니다.")
+                }else if(index >=0){
+                    console.log(this.historyCal[index], "=",this.historyResult[index])
+                }else{
                 for(i=0;i<len;i++){
                     console.log(this.historyCal[i], "=",this.historyResult[i]);
-            }
+                }
+                }
             }
             this.inputHistory = function(calStr, resultStr){
                 this.historyCal.push(calStr);
                 this.historyResult.push(resultStr);
             }
             this.add = function(a,b){
-                var calStr = a+"+"+b;
+                var calStr = a+"+"+b;3
                 var result = a+b;
                 this.inputHistory(calStr , String(result))
                 return result;
@@ -51,6 +58,62 @@
         }
         var cal1 = new calObject();
         var cal2 = new calObject();
+
+        var calObject2 = function(){
+            this.historyCal = [];
+            this.historyResult = [];
+
+            this.printHistory = function(index){
+                var i,len = this.historyCal.length;
+                
+                if (index>=len || index<=-1){
+                    console.log("인덱스에 해당하는 값이 존재하지 않습니다.")
+                }else if(index >=0){
+                    console.log(this.historyCal[index], "=",this.historyResult[index])
+                }else if(index == undefined){
+                for(i=0;i<len;i++){
+                    console.log(this.historyCal[i], "=",this.historyResult[i]);
+                }
+                }
+            }
+
+            var aaa = this;
+            var inputHistory = function(calStr, resultStr){
+                aaa.historyCal.push(calStr);
+                aaa.historyResult.push(resultStr);
+            }
+            this.add = function(a,b){
+                var calStr = a+"+"+b;3
+                var result = a+b;
+                inputHistory(calStr , String(result))
+                return result;
+            }
+            this.minus = function(a,b){
+                var calStr = a+"-"+b;
+                var result = a-b;
+                inputHistory(calStr , String(result))
+                return result;
+            }
+            this.multi = function(a,b){
+                var calStr = a+"x"+b;
+                var result = a*b;
+                this.inputHistory(calStr , String(result))
+                return result;
+            }
+            this.divide = function(a,b){
+                var calStr = a+"/"+b;
+                var result = a/b;
+                inputHistory(calStr , String(result))
+                return result;
+            }
+            this.remain = function(a,b){
+                var calStr = a+"%"+b;
+                var result = a%b;
+                inputHistory(calStr , String(result))
+                return result;
+            }
+        }
+        var cal8 = new calObject2();
     </script>
 </head>
 <body>

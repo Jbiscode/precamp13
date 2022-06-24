@@ -1,0 +1,14 @@
+html,body{margin:0; padding: 0;}
+*{margin:0; padding: 0;}
+table{border-collapse: collapse;}
+
+#wrapper{margin: 30px; width: 550px;}
+#calendar{width: 500px;}
+#calendar th, #calendar td{padding: 5px; border: 1px solid #eee; height: 30px;}
+button{height: 50px; width: 100px;}
+#util{width: 500px; text-align: center;}
+#prevMBtn{float: left;}
+#nextMBtn{float: right;}
+span{display: inline-block; font-size: 35px;}
+td{text-align: center;}
+#red{color: red; font-weight: bold;}

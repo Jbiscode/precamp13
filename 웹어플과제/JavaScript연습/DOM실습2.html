@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        var list = [1,2,3,4,5];
+        var list1 = list.concat()
+        var list2 = list.concat()
+
+        list = list.sort().reverse();
+        console.log(list);
+
+        var firstVal = list.shift();
+        list.push(firstVal);
+        console.log(list);
+
+
+        list.sort();
+        console.log(list);
+
+
+        var duplicateList = list.slice(1,4);
+        console.log(duplicateList);
+
+        duplicateList.splice(1,0,5);
+        console.log(duplicateList);
+
+
+        console.log(duplicateList.join("-"));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

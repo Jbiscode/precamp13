@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            height: 200px;
+            width: 200px;
+            border: 5px solid pink;
+            display: inline-block;
+        }
+    </style>
+    <script>
+        var boxlist = document.querySelectorAll('div')
+        var thirdbox = boxlist[2]
+        document.parentElement.removeChild(thirdbox)
+        var secondbox = boxlist[1]
+        var firstbox = boxlist[0]
+        document.body.appendChild(thirdbox)
+        document.body.insertBefore(secondbox,firstbox)
+    </script>
+</head>
+<body>
+    <div>첫번째</div>
+    <div>두번째</div>
+    <div style="background: gray;">세번째</div>
+    <div>네번째</div>
+    <div>다섯번째</div>
+</body>
+</html>

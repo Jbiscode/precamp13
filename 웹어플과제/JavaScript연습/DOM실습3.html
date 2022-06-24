@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            height: 200px;
+            width: 200px;
+            border: 5px solid pink;
+            display: inline-block;
+        }
+
+        .point{border: 5px solid red;}
+    </style>
+    <script>
+        window.addEventListener('load',onWindowLoadHandler);
+
+
+        function onWindowLoadHandler(){
+            var divList = document.querySelectorAll("div");
+            console.log(divList);
+
+            var i, len=divList.length;
+            for(i=0;i<len;i++){
+                divList[i].addEventListener("click",onDivClickHandler);
+            }
+        }
+
+        function onDivClickHandler(e){
+            console.log(e.target,e.type);
+            e.target.setAttribute('class','point')
+        }
+
+
+
+
+    </script>
+</head>
+<body>
+    <div>첫번째</div>
+    <div>두번째</div>
+    <div style="background: gray;">세번째</div>
+    <div>네번째</div>
+    <div>다섯번째</div>
+</body>
+</html>

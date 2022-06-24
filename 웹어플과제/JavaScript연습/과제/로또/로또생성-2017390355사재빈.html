@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>로또번호생성 및 String실습 2017390355사재빈</title>
+
+    <style>
+        body {width: 500px; height: 500px; display: inline-block;}
+        #lotto__number{ display: inline-block; width: 140px; height: 20px;}
+        #Q1{display: inline-block; width: 100px; height: 20px;}
+        #Q2{display: inline-block; width: 300px; height: 20px;}
+        #Q3{display: inline-block; width: 380px; height: 200px;}
+        #point{color:red;}
+    </style>
+    
+    <script src="./lotto.js"></script>
+    <script src="./정렬.js"></script>
+
+</head>
+<body>
+    <span id="lotto__number">로또 번호 생성란</span>
+    <button id="btn" onclick="numLotto()">로또번호생성</button><br><br>
+
+
+
+    <span id="Q1">cdeabfg</span>
+    <button onclick="ascendingOrder()">오름차순정리</button>
+    <br><br>
+
+
+
+    <span id="Q2">Strawberry,Grape,Apple,Banana</span>
+    <button onclick="orderCapitalize()">순차정렬 및 대문자화</button>
+    <br><br>
+
+
+
+    <span id="Q3">말 그대로 '<span id="point">사과</span>색', 즉 주황색의 둥근 모양 과일이다.
+        <span id="point">사과</span>는 귤과 비슷하나 귤보다 더 크고 껍질이 두껍고 질겨
+        약간 단단한 느낌이 든다. <span id="point">사과</span>는 속껍질까지 해체하면 그냥 큰 귤같다.
+    </span>
+    <button onclick="changeWord()">문자 바꾸기</button>
+
+
+</body>
+</html>
