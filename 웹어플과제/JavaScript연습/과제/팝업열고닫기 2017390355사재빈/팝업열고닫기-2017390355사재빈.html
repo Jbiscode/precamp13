@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>팝업열고닫기 2017390355사재빈</title>
+    <style>
+        #viewPop {width: 200px; height: 50px; border: 2px solid black; font-size: 30px; display: inline-block; text-align: center; cursor: pointer;}
+        #popup {width: 100%; height: 100%; position: fixed;}
+        #popup #dim{width: 100%; height: 100%; position: fixed; z-index: 1; background: black; opacity: 0.7;}
+        #popup #content{width: 50%; height: 50%; position: absolute; z-index: 2; background: white; left: 25%; top: 25%;}
+        #pop-close {width: 100px; height: 50px; cursor: pointer;}
+    </style>
+
+    <script src="./jquery.js"></script>
+    <script src="./popup.js"></script>
+</head>
+<body>
+    <div id="popup">
+        <div id="dim">
+        </div>
+        <div id="content"> 
+            2017390355 사재빈<br>
+            팝업열고닫기 실습<br>
+            <br>
+            <button id="pop-close">닫기</button>
+        </div>
+    </div>
+    <span id="viewPop">팝업보기</span>
+</body>
+</html>

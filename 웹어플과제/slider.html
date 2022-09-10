@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slider</title>
+    <style>
+        * {margin: 0; padding: 0;}
+        ul, li {list-style-type: none; }
+
+        #leftBtn{ float : left;}
+        #rightBtn{ float : left;}
+
+        #slider {width: 300px; overflow: hidden; float: left;}
+        #banner {width: 500px;}
+        #banner li {float: left; width: 95px; margin-left: 5px; height: 100px; background: #eee;}
+
+    </style>
+    <script src="/jquery.js"></script>
+    <script>
+        var viewNum = 3;
+        var startIndex = 0;
+        var itemLen = 5;
+        var maxMoveCnt = itemLen - viewNum;
+        var banner;
+
+        $(function (){
+            banner = $("#banner");
+            itemLen = banner.find("li").length;
+            maxMoveCnt = itemLen - viewNum
+
+            $("#leftBtn").on("click", function(){
+                startIndex = startIndex + 1;
+                if (startIndex > maxMoveCnt){
+                    startIndex = maxMoveCnt;
+                    return;
+                }
+                slideBanner();
+            })
+
+            $("#rightBtn").on("click", function(){
+                startIndex = startIndex - 1;
+                if (startIndex < 0){
+                    startIndex = 0;
+                    return;
+                }
+                slideBanner();
+            })
+        })
+
+        function slideBanner(){
+            var targetMargin = String(-100 * startIndex) + "px";
+            $("banner").animate({marginLeft : targetMargin});
+        }
+    </script>
+</head>
+<body>
+
+<div id="wrap">
+    <button id="leftBtn">왼쪽</button>
+    <div id="slider">
+        <ul id="banner">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+    <button id="rightBtn">오른쪽</button>
+
+</div>
+
+</body>
+</html>
